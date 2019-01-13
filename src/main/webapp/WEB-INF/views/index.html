@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>TroiDat.com</h1>
+<h2>Sign In Form</h2>
+<form th:object="${signin}"   method="post"  >
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input th:field="*{firstName}"></td>
+            <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstName Error</td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input th:field="*{lastName}"></td>
+            <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName Error</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input th:field="*{email}"></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input th:field="*{password}"></td>
+            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+            <td><input th:field="*{number}"></td>
+            <td th:if="${#fields.hasErrors('number')}" th:errors="*{number}">number Error</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Sign In"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
